@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+  cursor: url('cursor.png') 8 8, auto; /* Replace with the path to your cursor image and adjust hotspot (8 8) */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Links */
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #dcdcdc;
+}
+
+/* Parallax Header */
+.parallax {
+  background-image: url('header-bg.jpg'); /* Replace with your own background */
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header styles */
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; /* Smaller font size for your name */
+  margin: 0;
+  letter-spacing: 0.05em;
+  color: #fff;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Positioned off-screen initially */
+}
+
+.subheader {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-top: 20px;
+  color: #ccc;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Positioned off-screen initially */
+}
+
+header {
+  text-align: left;
+  padding: 60px 0;
+}
+
+/* Slide-in animation */
+.slide-in {
+  animation: slideIn 1s ease-out forwards; /* Applies the animation */
+}
+
+/* Keyframes for sliding in */
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateY(50px); /* Start off-screen */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0); /* Slide into position */
+  }
+}
+/* Styles for navigation bar */
+.navbar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  top: 10px; /* Aligns the navbar to the very top */
+  bottom: 10px; /* Aligns the navbar to the very top */
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #5588ff;
+}
+
+/* Adjust header content positioning to avoid overlap */
+header .container {
+  position: relative;
+}
+
+
+/* Sections */
+section {
+  margin: 100px 0;
+  border-top: 1px solid #eaeaea;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+h4 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+/* Grid Items */
+.grid-item {
+  background-color: #2c2c2c;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #eaeaea;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.grid-item:hover {
+  background-color: #484848;
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Description on Hover */
+.description {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  font-size: 1rem;
+  background-color: rgba(225, 225, 225, 0.7);
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+.grid-item:hover .description {
+  display: block;
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 60px 0;
+  border-top: 1px solid #eaeaea;
+  background-color: #000000;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 4rem;
+  }
+  
+  .grid {
+      grid-template-columns: 1fr;
+  }
+}
